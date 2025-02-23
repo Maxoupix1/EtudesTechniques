@@ -1,41 +1,41 @@
 # KMeansClusterer
 
-## Présentation
-Ce projet implémente une classe `KMeansClusterer` en Python, permettant d'appliquer l'algorithme de clustering K-Means sur des matrices 3D extraites de fichiers `.mat`. L'objectif est d'organiser ces matrices en clusters afin d'analyser les schémas et dynamiques sous-jacents.
+## Introduction
+Ce projet propose une implémentation avancée de l'algorithme de clustering K-Means appliqué à des matrices 3D issues de fichiers `.mat`. Il permet une segmentation efficace des données afin d’extraire des motifs récurrents et d’étudier la dynamique des structures sous-jacentes. L’approche inclut des méthodes d’évaluation et de visualisation pour une interprétation approfondie des clusters générés.
 
-## Fonctionnalités
+## Fonctionnalités principales
 - Chargement et traitement des fichiers `.mat` contenant des matrices 3D.
-- Conversion des matrices 3D en matrices 2D exploitables.
-- Aplatissement et normalisation des matrices pour les rendre compatibles avec K-Means.
-- Application de l'algorithme K-Means et stockage des résultats.
-- Détermination du nombre optimal de clusters via :
-  - La méthode du coude (Elbow Method).
-  - Le coefficient de silhouette.
-- Visualisation des centroïdes et des exemples de matrices par cluster.
-- Affichage de la distribution des clusters.
-- Attribution des clusters aux dyades et suivi de leur évolution temporelle.
+- Conversion des matrices 3D en représentations 2D exploitables.
+- Prétraitement des données via aplatissement et normalisation.
+- Application du clustering K-Means et stockage des résultats.
+- Détermination du nombre optimal de clusters par :
+  - La méthode du coude (Elbow Method), basée sur l’inertie intra-classe.
+  - L’évaluation du coefficient de silhouette pour mesurer la cohésion et la séparation des clusters.
+- Visualisation des centroïdes et échantillons représentatifs.
+- Analyse de la distribution des clusters.
+- Attribution des clusters aux dyades et étude de leur évolution temporelle.
 
-## Prérequis
-Avant d'exécuter le script, assurez-vous d'avoir installé les bibliothèques suivantes :
+## Prérequis techniques
+L'exécution de ce projet nécessite l'installation des bibliothèques Python suivantes :
 
 ```bash
 pip install numpy scipy matplotlib scikit-learn
 ```
 
-## Guide d'utilisation
+## Utilisation
 
 ### 1. Initialisation de la classe
-Créez une instance de la classe `KMeansClusterer` avec le nombre de clusters souhaité :
+Instanciez la classe `KMeansClusterer` en spécifiant le nombre de clusters souhaité :
 
 ```python
 from kmeans_clusterer import KMeansClusterer
 
-n_clusters = 5  # Nombre de clusters souhaité
+n_clusters = 5  # Définition du nombre de clusters
 clusterer = KMeansClusterer(n_clusters)
 ```
 
-### 2. Chargement des données
-Chargez les fichiers `.mat` et générez les matrices exploitables :
+### 2. Chargement et prétraitement des données
+Importez les fichiers `.mat` et extrayez les matrices exploitables :
 
 ```python
 data_directory = "chemin/vers/le/repertoire"
@@ -43,24 +43,24 @@ data = clusterer.load_all_data(data_directory)
 matrices = clusterer.generate_matrices(data)
 ```
 
-### 3. Détermination du nombre optimal de clusters
-Utilisez les méthodes de validation pour trouver le nombre optimal de clusters :
+### 3. Sélection du nombre optimal de clusters
+Utilisez les techniques d'évaluation pour choisir la valeur de k optimale :
 
 ```python
 clusterer.elbow_method(matrices, range_clusters=10)
 clusterer.silhouette_score_method(matrices, range_clusters=10)
 ```
 
-### 4. Exécution de l'algorithme K-Means
-Appliquez K-Means sur les matrices et affichez le score de silhouette :
+### 4. Application de K-Means et analyse
+Entraînez le modèle K-Means et obtenez le score de silhouette moyen :
 
 ```python
 clusterer.fit(matrices)
 clusterer.print_silhouette_score()
 ```
 
-### 5. Visualisation des résultats
-Affichez les centroïdes, la distribution des clusters et l'évolution des dyades :
+### 5. Visualisation et interprétation des résultats
+Affichez les centroïdes, analysez la distribution des clusters et suivez leur évolution temporelle :
 
 ```python
 clusterer.plot_centroids(matrices)
@@ -69,7 +69,10 @@ dyad_clusters = clusterer.assign_clusters_to_dyads()
 clusterer.plot_dyad_clusters()
 ```
 
-## Fichiers générés
-Si un chemin de sauvegarde est spécifié, les résultats seront enregistrés sous forme d'images (`.png`) et de fichiers texte (`.txt`) dans le répertoire indiqué.
+## Résultats et exportation
+Les sorties générées peuvent être enregistrées sous forme d’images (`.png`) et de fichiers texte (`.txt`) pour une exploitation ultérieure. Si un chemin de sauvegarde est spécifié, les fichiers seront stockés dans le répertoire désigné.
+
+## Auteur et contexte
+Ce projet a été développé dans un cadre académique pour fournir un outil robuste d’analyse de matrices 3D via le clustering K-Means. Il est destiné aux chercheurs et étudiants travaillant sur des problématiques de segmentation et d’extraction de motifs à partir de données multidimensionnelles.
 
 
