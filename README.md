@@ -21,6 +21,7 @@ L'exécution de ce projet nécessite l'installation des bibliothèques Python su
 ```bash
 pip install numpy scipy matplotlib scikit-learn
 ```
+Les versions des bibliothèques utilisées pour ce projet sont spécifiées dans `requirements.txt` en cas de besoin.
 
 ## Utilisation
 
