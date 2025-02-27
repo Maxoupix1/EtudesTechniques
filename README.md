@@ -73,6 +73,9 @@ clusterer.plot_dyad_clusters()
 ## Résultats et exportation
 Les sorties générées peuvent être enregistrées sous forme d’images (`.png`) et de fichiers texte (`.txt`) pour une exploitation ultérieure. Si un chemin de sauvegarde est spécifié, les fichiers seront stockés dans le répertoire désigné.
 
+## Fichier main.py
+Ce fichier présente un exemple d'implémentation pour obtenir les résultats d'un clustering et les sauvegarder.
+
 ## Dossier `notebooks pour traitement`
 Ce dossier propose des exemples de modification et d'implémentation de la classe `KMeansClusterer` afin de n'utiliser que la diagonale ou d'utiliser un masque pour réaliser le clustering.
 
