@@ -2,12 +2,12 @@ from KMeansClusterer import KMeansClusterer
 import os
 
 # Définir un dossier de sauvegarde
-save_directory = "results_60_5"
+save_directory = "Results\\results_60_5"
 os.makedirs(save_directory, exist_ok=True)  # Crée le dossier s'il n'existe pas
 
 # Charger et préparer les données
 clusterer = KMeansClusterer(n_clusters=5)
-data = clusterer.load_all_data("Win60sec-Overlap5sec")
+data = clusterer.load_all_data("Data\\Win60sec-Overlap5sec")
 matrices = clusterer.generate_matrices(data)
 
 # Générer et sauvegarder les plots
