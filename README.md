@@ -74,7 +74,7 @@ clusterer.plot_dyad_clusters()
 Les sorties générées peuvent être enregistrées sous forme d’images (`.png`) et de fichiers texte (`.txt`) pour une exploitation ultérieure. Si un chemin de sauvegarde est spécifié, les fichiers seront stockés dans le répertoire désigné.
 
 ## Dossier `notebooks pour traitement`
-Ce dossier propose des exemples de modification et d'implémentation de la classe `KMeansClusterer` afin de n'utiliser que la diagonale ou d'utiiser un masque pour réaliser le clustering.
+Ce dossier propose des exemples de modification et d'implémentation de la classe `KMeansClusterer` afin de n'utiliser que la diagonale ou d'utiliser un masque pour réaliser le clustering.
 
 ## Auteur et contexte
 Ce projet a été développé dans un cadre académique pour fournir un outil robuste d’analyse de matrices 3D via le clustering K-Means. Il est destiné aux chercheurs et étudiants travaillant sur des problématiques de segmentation et d’extraction de motifs à partir de données multidimensionnelles.
