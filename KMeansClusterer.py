@@ -34,6 +34,10 @@ class KMeansClusterer:
         """Aplatie les matrices 2D en vecteurs"""
         return matrices.reshape(matrices.shape[0], -1)
     
+    def extract_diagonals(self, matrices):
+        """Extrait uniquement les diagonales des matrices et les transforme en vecteurs"""
+        diagonals = [np.diagonal(matrix) for matrix in matrices]
+        return np.array(diagonals)
 
     def fit(self, matrices):
         """Applique KMeans et stocke les résultats"""
