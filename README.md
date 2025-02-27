@@ -4,8 +4,8 @@
 Ce projet propose une implémentation avancée de l'algorithme de clustering K-Means appliqué à des matrices 3D issues de fichiers `.mat`. Il permet une segmentation efficace des données afin d’extraire des motifs récurrents et d’étudier la dynamique des structures sous-jacentes. L’approche inclut des méthodes d’évaluation et de visualisation pour une interprétation approfondie des clusters générés.
 
 ## Fonctionnalités principales
-- Chargement et traitement des fichiers `.mat` contenant des matrices 3D.
-- Conversion des matrices 3D en représentations 2D exploitables.
+- Chargement et traitement des fichiers `.mat` contenant des matrices 2D entre autres informations.
+- Conversion des matrices contenues dans les fichiers `.mat` en représentations 2D exploitables pour le clustering.
 - Prétraitement des données via aplatissement et normalisation.
 - Application du clustering K-Means et stockage des résultats.
 - Détermination du nombre optimal de clusters par :
