@@ -33,6 +33,7 @@ class KMeansClusterer:
     def flatten_matrices(self, matrices):
         """Aplatie les matrices 2D en vecteurs"""
         return matrices.reshape(matrices.shape[0], -1)
+    
 
     def fit(self, matrices):
         """Applique KMeans et stocke les résultats"""
@@ -43,10 +44,15 @@ class KMeansClusterer:
         self.cluster_labels = self.kmeans.fit_predict(self.matrices)
         self.centroids = self.kmeans.cluster_centers_
 
-    def elbow_method(self, matrices, range_clusters, save_path=None):
+    def elbow_method(self, matrices, range_clusters, use_diagonal=False, save_path=None):
         """Trace la méthode du coude pour trouver le bon nombre de clusters"""
-        flattened_data = self.flatten_matrices(matrices)
-        flattened_data_normalized = flattened_data / flattened_data.max()
+        if use_diagonal:
+            data = self.extract_diagonals(matrices)
+        else:
+            data = self.flatten_matrices(matrices)
+
+
+        flattened_data_normalized = data / data.max()
 
         inertia_values = []
         k_range = range(1, range_clusters)
@@ -68,10 +74,14 @@ class KMeansClusterer:
             plt.show()
         plt.close()
 
-    def silhouette_score_method(self, matrices, range_clusters, save_path=None):
+    def silhouette_score_method(self, matrices, range_clusters, use_diagonal=False, save_path=None):
         """Trace le Silhouette Score en fonction du nombre de clusters"""
-        flattened_data = self.flatten_matrices(matrices)
-        flattened_data_normalized = flattened_data / flattened_data.max()
+        if use_diagonal:
+            data = self.extract_diagonals(matrices)
+        else:
+            data = self.flatten_matrices(matrices)
+            
+        flattened_data_normalized = data / data.max()
 
         silhouette_scores = []
         k_range = range(2, range_clusters)
