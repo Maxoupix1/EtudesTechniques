@@ -73,6 +73,9 @@ clusterer.plot_dyad_clusters()
 ## Résultats et exportation
 Les sorties générées peuvent être enregistrées sous forme d’images (`.png`) et de fichiers texte (`.txt`) pour une exploitation ultérieure. Si un chemin de sauvegarde est spécifié, les fichiers seront stockés dans le répertoire désigné.
 
+## Fichier main.py
+Ce fichier présente un exemple d'implémentation pour obtenir les résultats d'un clustering et les sauvegarder.
+
 ## Dossier `notebooks pour traitement`
 Ce dossier propose des exemples de modification et d'implémentation de la classe `KMeansClusterer` afin de n'utiliser que la diagonale ou d'utiliser un masque pour réaliser le clustering.
 
@@ -80,7 +83,8 @@ Ce dossier propose des exemples de modification et d'implémentation de la class
 Contient les données ayant été utilisées pour le clustering
 
 ## Dossier `Results`
-Présente différents exemples de résultats obtenus à l'aide du clustering sur les données contenues dans le dossier `Data`
+Présente différents exemples de résultats obtenus à l'aide du clustering sur les données contenues dans le dossier `Data`.
+Les résulats sont répartis en trois échantillonages différents 15, 60 et 120 secondes. Pour chacun des échantillonages, un clustering est réalisé sur toute la matrice, sur la diagonale et un dernier en appliquant un masque spécifique, c'est-à-dire en choisissant manuellement les zones du cerveau que l'on considère.
 
 ## Fichier `traitement120_10.ipynb`
 Contient des analyses sur les fenêtres de 120 secondes et propose une implémentation de Deep Learning à la fin du notebook.
