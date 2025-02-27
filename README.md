@@ -76,6 +76,15 @@ Les sorties générées peuvent être enregistrées sous forme d’images (`.png
 ## Dossier `notebooks pour traitement`
 Ce dossier propose des exemples de modification et d'implémentation de la classe `KMeansClusterer` afin de n'utiliser que la diagonale ou d'utiliser un masque pour réaliser le clustering.
 
+## Dossier `Data`
+Contient les données ayant été utilisées pour le clustering
+
+## Dossier `Results`
+Présente différents exemples de résultats obtenus à l'aide du clustering sur les données contenues dans le dossier `Data`
+
+## Fichier `traitement120_10.ipynb`
+Contient des analyses sur les fenêtres de 120 secondes et propose une implémentation de Deep Learning à la fin du notebook.
+
 ## Auteur et contexte
 Ce projet a été développé dans un cadre académique pour fournir un outil robuste d’analyse de matrices 3D via le clustering K-Means. Il est destiné aux chercheurs et étudiants travaillant sur des problématiques de segmentation et d’extraction de motifs à partir de données multidimensionnelles.
 
